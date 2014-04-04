@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nav_menu_items">
+        <item>Play Store</item>
+        <item>Meus Aplicativos</item>        
+        <item>Comprar aplicativos</item>
+        <item>Minha lista de desejos</item>
+        <item>Resgatar</item>
+        <item>CONFIGURAÇÕES</item>
+        <item>AJUDA</item>               
+    </string-array>       
+</resources>
