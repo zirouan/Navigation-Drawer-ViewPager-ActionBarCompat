@@ -32,7 +32,7 @@ public class FragmentTabTwo extends Fragment{
 		View rootView = inflater.inflate(R.layout.fragmenttwo, container, false);
 		
 		txtFragmenttwo = (TextView) rootView.findViewById(R.id.txtFragmentTwo);
-		txtFragmenttwo.setText("This is Two");
+		txtFragmenttwo.setText(R.string.fragment_tab_two);
 		
 		rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));		
 		return rootView;

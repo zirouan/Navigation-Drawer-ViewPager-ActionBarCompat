@@ -27,7 +27,7 @@ public class FragmentTabOne extends Fragment{
 			
 		View rootView = inflater.inflate(R.layout.fragmentone, container, false);
 		txtFragmentone = (TextView) rootView.findViewById(R.id.txtFragmentOne);
-		txtFragmentone.setText("This is One");
+		txtFragmentone.setText(R.string.fragment_tab_one);
 
 		rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));		
 		return rootView;

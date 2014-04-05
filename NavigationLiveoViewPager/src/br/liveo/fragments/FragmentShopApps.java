@@ -27,7 +27,7 @@ public class FragmentShopApps extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragmentshopapps, container, false);		
 		
 		txtFragmentRoute = (TextView) rootView.findViewById(R.id.txtFragmentRoute);
-		txtFragmentRoute.setText("This is the Shop Apps fragments");
+		txtFragmentRoute.setText(R.string.fragment_shop_apps);
 		
 		rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));		
 		return rootView;		

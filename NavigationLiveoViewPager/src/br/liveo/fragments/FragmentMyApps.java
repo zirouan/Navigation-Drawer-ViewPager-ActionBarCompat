@@ -27,7 +27,7 @@ public class FragmentMyApps extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragmentmyapps, container, false);
 		
 		txtFragmentDownload = (TextView) rootView.findViewById(R.id.txtFragmentDownload);
-		txtFragmentDownload.setText("This is the My Apps fragments");
+		txtFragmentDownload.setText(R.string.fragment_my_apps);
 		
 		rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));		
 		return rootView;		
