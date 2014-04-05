@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Navigation -->    
+    <string name="header">User</string>    
+        
+    <string name="app_name">Navigation ViewPager Live-O</string>
+    <string name="clear"></string>
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="update">Update</string>
+        
+    <string name="drawer_open">Open drawer navigation</string>
+    <string name="drawer_close">Navigation drawer Close</string>
+    
+    <string name="titulo_user">Rudson Lima</string>
+    <string name="subtitulo_user">rudsonlive@gmail.com</string>   
+
+    <string name="tab_one">Tab One</string>
+    <string name="tab_two">Tab Two</string>
+    <string name="tab_three">Tab Three</string>  
+    
+    <string name="fragment_my_apps">This is MyApps</string>    
+    <string name="fragment_shop_apps">This is ShopApps</string>
+    <string name="fragment_tab_one">This is One</string>    
+    <string name="fragment_tab_two">This is Two</string>
+    <string name="fragment_tab_three">This is Three</string>  
+    
+</resources >
