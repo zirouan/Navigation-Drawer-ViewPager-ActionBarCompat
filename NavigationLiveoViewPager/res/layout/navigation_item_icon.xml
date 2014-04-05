@@ -5,16 +5,15 @@
     android:layout_height="match_parent"           
     android:orientation="vertical"
     android:background="#F7F7F7">
+
+	<View
+		android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:background="@color/gray_line" />
     
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@color/gray_navegation">        
-
-	    <View
-	        android:layout_width="fill_parent"
-	        android:layout_height="1dp"
-	        android:background="@color/gray_line" />
+        android:layout_height="50dp">        
 	        
         <ImageView
             android:id="@+id/icon"
@@ -58,7 +57,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:visibility="gone"
-            android:background="@color/blue_dark" />
+            android:background="@color/gray_line" />
         
 	<View
         android:layout_width="fill_parent"

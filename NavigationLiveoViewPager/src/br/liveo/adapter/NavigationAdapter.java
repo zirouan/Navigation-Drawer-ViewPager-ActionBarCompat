@@ -149,16 +149,17 @@ public class NavigationAdapter extends ArrayAdapter<NavigationItemAdapter> {
 			}
 		}
 	    
-		if (!item.isHeader) {
+		if (!item.isHeader && item.icon == 0) {
 			if (checkedItems.contains(Integer.valueOf(position))) {
 				holder.title.setTypeface(null,Typeface.BOLD);
+				holder.viewNavigation.setVisibility(View.VISIBLE);				
 			} else {				
-				holder.title.setTypeface(null,Typeface.NORMAL);				
-			}
-			
-			view.setBackgroundResource(R.drawable.seletor_item_navigation);			
+				holder.title.setTypeface(null,Typeface.NORMAL);		
+				holder.viewNavigation.setVisibility(View.GONE);				
+			}			
 		}
 		
+		view.setBackgroundResource(R.drawable.seletor_item_navigation);		
 	    return view;		
 	}
 

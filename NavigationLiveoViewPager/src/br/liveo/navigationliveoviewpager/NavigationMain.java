@@ -188,11 +188,11 @@ public class NavigationMain extends ActionBarActivity{
 		}
 	};	
 	
-	private void setFragmentList(int posicao){
+	private void setFragmentList(int position){
 		
 		FragmentManager fragmentManager = getSupportFragmentManager();							
 		
-		switch (posicao) {
+		switch (position) {
 		case 0:			
 			fragmentManager.beginTransaction().replace(R.id.content_frame, fragmentViewPager = new FragmentViewPager()).commit();
 			break;					
@@ -208,8 +208,10 @@ public class NavigationMain extends ActionBarActivity{
 			break;	
 		}			
 	
-		navigationAdapter.resetarCheck();			
-		navigationAdapter.setChecked(posicao, true);		
+		if (position < 5){
+			navigationAdapter.resetarCheck();			
+			navigationAdapter.setChecked(position, true);
+		}
 	}
 
     private void hideMenus(Menu menu, int posicao) {
@@ -248,10 +250,10 @@ public class NavigationMain extends ActionBarActivity{
 		}    	
     }
 
-    private void getInstanceFragments(Bundle savedInstanceState, int posicao) {
+    private void getInstanceFragments(Bundle savedInstanceState, int position) {
     	
 		FragmentManager manager = getSupportFragmentManager();		
-    	switch (posicao) {
+    	switch (position) {
 		case 0:
 			fragmentViewPager = (FragmentViewPager) manager.getFragment(savedInstanceState, Constant.FRAGMENT_VIEWPAGER);						
 			break;			    	
@@ -265,8 +267,10 @@ public class NavigationMain extends ActionBarActivity{
 			//implement other fragments here			
 		}    	
     				    	    	
-		navigationAdapter.resetarCheck();		
-		navigationAdapter.setChecked(posicao, true);				
+		if (position < 5){
+			navigationAdapter.resetarCheck();			
+			navigationAdapter.setChecked(position, true);
+		}    	
     }
 
 	public void setTitleFragments(int position){	

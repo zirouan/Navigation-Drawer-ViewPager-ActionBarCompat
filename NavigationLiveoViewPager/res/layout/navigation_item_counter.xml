@@ -52,8 +52,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:visibility="gone"
-            android:background="@color/blue_dark" />        
+            android:background="@color/gray_line" />        
     </RelativeLayout>
 
     <View
