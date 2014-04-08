@@ -284,5 +284,5 @@ public class NavigationMain extends ActionBarActivity{
 
 	public void setCounterItemDownloads(int value) {
 		this.counterItemDownloads = value;
-	}		
+	}
 }

@@ -92,11 +92,7 @@ public class NavigationAdapter extends ArrayAdapter<NavigationItemAdapter> {
 		if (view == null) {
 
 			int layout = 0;			
-			if (item.icon != 0){
-				layout = R.layout.navigation_item_icon;				
-			}else{
-				layout = R.layout.navigation_item_counter;
-			}
+			layout = R.layout.navigation_item_counter;
 						
 			if (item.isHeader){
 				layout = R.layout.navigation_header_title;
@@ -149,13 +145,13 @@ public class NavigationAdapter extends ArrayAdapter<NavigationItemAdapter> {
 			}
 		}
 	    
+		holder.viewNavigation.setVisibility(View.GONE);		
 		if (!item.isHeader && item.icon == 0) {
 			if (checkedItems.contains(Integer.valueOf(position))) {
 				holder.title.setTypeface(null,Typeface.BOLD);
 				holder.viewNavigation.setVisibility(View.VISIBLE);				
 			} else {				
-				holder.title.setTypeface(null,Typeface.NORMAL);		
-				holder.viewNavigation.setVisibility(View.GONE);				
+				holder.title.setTypeface(null,Typeface.NORMAL);						
 			}			
 		}
 		

@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.liveo.navigationviewpagerliveo"
     android:versionCode="1"
-    android:versionName="0.0.1" >
+    android:versionName="0.0.1" >     
     
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="9"
         android:targetSdkVersion="19" />
 
     <application
