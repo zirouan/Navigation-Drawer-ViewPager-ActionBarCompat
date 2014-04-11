@@ -260,7 +260,7 @@ public class NavigationMain extends ActionBarActivity{
 		case 1:
 			fragmentMyApps = (FragmentMyApps) manager.getFragment(savedInstanceState, Constant.FRAGMENT_MYAPPS);						
 			break;			
-		case 3:				
+		case 2:				
 			fragmentShopApps = (FragmentShopApps) manager.getFragment(savedInstanceState, Constant.FRAGMENT_SHOPAPPS);			
 			break;			
 			
