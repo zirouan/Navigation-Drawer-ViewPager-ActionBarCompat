@@ -17,9 +17,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import br.liveo.adapter.NavigationAdapter;
-import br.liveo.fragments.FragmentMyApps;
-import br.liveo.fragments.FragmentShopApps;
-import br.liveo.fragments.FragmentViewPager;
+import br.liveo.fragments.MyAppsFragment;
+import br.liveo.fragments.ShopAppsFragment;
+import br.liveo.fragments.ViewPagerFragment;
 import br.liveo.utils.Constant;
 import br.liveo.utils.Menus;
 import br.liveo.utils.Utils;
@@ -37,11 +37,7 @@ public class NavigationMain extends ActionBarActivity{
 
 	private NavigationAdapter navigationAdapter;
 	private ActionBarDrawerToggleCompat drawerToggle;	
-	
-	private FragmentViewPager fragmentViewPager;
-	private FragmentMyApps fragmentMyApps;
-	private FragmentShopApps fragmentShopApps;	
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -73,7 +69,12 @@ public class NavigationMain extends ActionBarActivity{
 		
 		if (savedInstanceState != null) { 			
 			setLastPosition(savedInstanceState.getInt(Constant.LAST_POSITION)); 				
-			getInstanceFragments(savedInstanceState, lastPosition);			
+			
+			if (lastPosition < 5){
+				navigationAdapter.resetarCheck();			
+				navigationAdapter.setChecked(lastPosition, true);
+			}    	
+			
 	    }else{
 	    	setLastPosition(lastPosition); 
 	    	setFragmentList(lastPosition);	    	
@@ -84,8 +85,7 @@ public class NavigationMain extends ActionBarActivity{
 	protected void onSaveInstanceState(Bundle outState) {
 		// TODO Auto-generated method stub		
 		super.onSaveInstanceState(outState);		
-		outState.putInt(Constant.LAST_POSITION, lastPosition);			
-		setInstanceFragments(outState, lastPosition);		
+		outState.putInt(Constant.LAST_POSITION, lastPosition);					
 	}
 	
 	@Override
@@ -194,13 +194,13 @@ public class NavigationMain extends ActionBarActivity{
 		
 		switch (position) {
 		case 0:			
-			fragmentManager.beginTransaction().replace(R.id.content_frame, fragmentViewPager = new FragmentViewPager()).commit();
+			fragmentManager.beginTransaction().replace(R.id.content_frame, new ViewPagerFragment()).commit();
 			break;					
 		case 1:			
-			fragmentManager.beginTransaction().replace(R.id.content_frame, fragmentMyApps = new FragmentMyApps()).commit();
+			fragmentManager.beginTransaction().replace(R.id.content_frame, new MyAppsFragment()).commit();
 			break;			
 		case 2:			
-			fragmentManager.beginTransaction().replace(R.id.content_frame, fragmentShopApps = new FragmentShopApps()).commit();						
+			fragmentManager.beginTransaction().replace(R.id.content_frame, new ShopAppsFragment()).commit();						
 			break;				
 			
 		default:
@@ -232,46 +232,6 @@ public class NavigationMain extends ActionBarActivity{
 			//implement other fragments here			
 		}          
     }	
-    
-    private void setInstanceFragments(Bundle savedInstanceState, int posicao) {
-    	
-		FragmentManager manager = getSupportFragmentManager();    	
-    	switch (posicao) {
-		case 0:
-			manager.putFragment(savedInstanceState, Constant.FRAGMENT_VIEWPAGER, fragmentViewPager);			
-			break;    	
-		case 1:
-			manager.putFragment(savedInstanceState, Constant.FRAGMENT_MYAPPS, fragmentMyApps);			
-			break;
-		case 2:			
-			manager.putFragment(savedInstanceState, Constant.FRAGMENT_SHOPAPPS, fragmentShopApps);			
-			break;				
-			//implement other fragments here			
-		}    	
-    }
-
-    private void getInstanceFragments(Bundle savedInstanceState, int position) {
-    	
-		FragmentManager manager = getSupportFragmentManager();		
-    	switch (position) {
-		case 0:
-			fragmentViewPager = (FragmentViewPager) manager.getFragment(savedInstanceState, Constant.FRAGMENT_VIEWPAGER);						
-			break;			    	
-		case 1:
-			fragmentMyApps = (FragmentMyApps) manager.getFragment(savedInstanceState, Constant.FRAGMENT_MYAPPS);						
-			break;			
-		case 2:				
-			fragmentShopApps = (FragmentShopApps) manager.getFragment(savedInstanceState, Constant.FRAGMENT_SHOPAPPS);			
-			break;			
-			
-			//implement other fragments here			
-		}    	
-    				    	    	
-		if (position < 5){
-			navigationAdapter.resetarCheck();			
-			navigationAdapter.setChecked(position, true);
-		}    	
-    }
 
 	public void setTitleFragments(int position){	
 		setIconActionBar(Utils.iconNavigation[position]);

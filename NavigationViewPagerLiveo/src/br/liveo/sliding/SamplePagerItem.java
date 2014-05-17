@@ -1,9 +1,9 @@
 package br.liveo.sliding;
 
 import android.support.v4.app.Fragment;
-import br.liveo.fragments.FragmentTabOne;
-import br.liveo.fragments.FragmentTabThree;
-import br.liveo.fragments.FragmentTabTwo;
+import br.liveo.fragments.TabOneFragment;
+import br.liveo.fragments.TabThreeFragment;
+import br.liveo.fragments.TabTwoFragment;
 
 public class SamplePagerItem {
 	
@@ -19,7 +19,7 @@ public class SamplePagerItem {
         this.mIndicatorColor = indicatorColor;
         this.mDividerColor = dividerColor;
         
-        listFragments = new Fragment[] {FragmentTabOne.newInstance(), FragmentTabTwo.newInstance(), FragmentTabThree.newInstance()};        
+        listFragments = new Fragment[] {TabOneFragment.newInstance(), TabTwoFragment.newInstance(), TabThreeFragment.newInstance()};        
     }
 
     public Fragment createFragment() {
